@@ -1,0 +1,5 @@
+@section('desctiptionTablets')
+
+
+
+@endsection

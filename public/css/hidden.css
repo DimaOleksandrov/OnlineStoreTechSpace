@@ -1,0 +1,14 @@
+
+@media (min-width: 320px) and (max-width: 767px) {
+.hidden_column{
+    display:none;
+}
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .hidden_column{
+        display:none;
+    }
+    .visible{
+        display:inline-block;
+    }
+ }

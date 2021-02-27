@@ -1,4 +1,17 @@
-<p align="center"><img src="public\images\1-Slide.jpg"><span>TechSpace</span></p>
+<h1 aling="center">TechSpace</h1>
+<p align="center"><img src="public\images\1-Slide.jpg"></p>
+
+
+## About Project
+
+The online store is written in PCP using the Laravel framework.
+Functionality that is present:
+- Add / Remove products from the shopping carts;
+- Saving the state of the basket forever (using cookies);
+- Product filter;
+- Checkout a basket;
+- Checkout of single one product without a basket;
+- Admin panel: add / remove / edit products, categories, brands.
 
 ## Screenshots
 

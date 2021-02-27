@@ -27,12 +27,14 @@ use App\Http\Controllers\CategoryController as CategoryShopController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Auth::routes([
     'reset'=> false,
     'confirm'=> false,
     'verify'=> false,
 
 ]);
+
 Route::get('/', [HomeController::class, 'index'])->name('homePage');
 Route::get('/aboutus', [AboutUsController::class, 'index'])->name('aboutUsPage');
 Route::get('/contacts', [ContactsController::class, 'index'])->name('contactsPage');

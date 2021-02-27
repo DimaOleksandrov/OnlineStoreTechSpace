@@ -2,11 +2,11 @@
 
 ## Screenshots
 
-<img src="screenshots\scrn-1.png">
-<img src="screenshots\scrn-2.png">
-<img src="screenshots\scrn-3.png">
-<img src="screenshots\scrn-4.png">
-<img src="screenshots\scrn-5.png">
-<img src="screenshots\scrn-6.png">
-<img src="screenshots\scrn-7.png">
-<img src="screenshots\scrn-8.png">
+<img src="screenshots\scrn-1.PNG">
+<img src="screenshots\scrn-2.PNG">
+<img src="screenshots\scrn-3.PNG">
+<img src="screenshots\scrn-4.PNG">
+<img src="screenshots\scrn-5.PNG">
+<img src="screenshots\scrn-6.PNG">
+<img src="screenshots\scrn-7.PNG">
+<img src="screenshots\scrn-8.PNG">

@@ -4,7 +4,7 @@
 
 ## About Project
 
-The online store is written in PCP using the Laravel framework.
+The online store is written in PHP using the Laravel framework.
 Functionality that is present:
 - Add / Remove products from the shopping carts;
 - Saving the state of the basket forever (using cookies);

@@ -38,10 +38,10 @@ class BasketController extends Controller
         return back();
     }
 
-    public function basketRemove(Request $request,$productId){
+    public function basketRemove(Request $request, $productId){
         $order = $this->checkSession($request);
         if(!is_null($order->id)){
-            $order = Order::find($orderId);
+            //$order = Order::find($order);
             if( $order->products->contains($productId)){
                 $pivotRow = $order->products()->where('product_id',$productId)->first()->pivot;
                 if($pivotRow->count < 2){

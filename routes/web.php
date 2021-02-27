@@ -13,7 +13,9 @@ use App\Http\Controllers\BasketController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\BrandsController;
-use  App\Http\Controllers\Auth\LoginController; 
+use App\Http\Controllers\Auth\LoginController; 
+use App\Http\Controllers\CategoryController as CategoryShopController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -35,15 +37,15 @@ Route::get('/', [HomeController::class, 'index'])->name('homePage');
 Route::get('/aboutus', [AboutUsController::class, 'index'])->name('aboutUsPage');
 Route::get('/contacts', [ContactsController::class, 'index'])->name('contactsPage');
 Route::get('/brands', [BrandsController::class, 'index'])->name('brandsPage');
-Route::get('/catalog/{category}/{namesProduct}', [ProductController::class, 'index'])->name('prod');
-Route::get('/catalog/{category}', [App\Http\Controllers\CategoryController::class, 'index'])->name('cat');
+Route::get('/catalog/{categoryCode}/{productName}', [ProductController::class, 'index'])->name('prod');
+Route::get('/catalog/{categoryCode}', [CategoryShopController::class, 'index'])->name('cat');
 Route::get('/basket', [BasketController::class, 'index'])->name('basket');
 Route::get('/chekout', [OrderController::class, 'index'])->name('order');
 Route::get('/catalog', [CatalogController::class, 'index'])->name('catalog');
-Route::post('/basket/add/{id}',[BasketController::class, 'basketAdd'])->name('basketadd');
-Route::post('/chekout/{id}',[OrderController::class, 'fastBuy'])->name('fastbuy');
-Route::post('/basket/removeall/{id}',[BasketController::class, 'basketRemoveAll'])->name('basketremoveall');
-Route::post('/basket/remove/{id}',[BasketController::class, 'basketRemove'])->name('basketremove');
+Route::post('/basket/add/{productId}',[BasketController::class, 'basketAdd'])->name('basketadd');
+Route::post('/chekout/{productId}',[OrderController::class, 'fastBuy'])->name('fastbuy');
+Route::post('/basket/removeall/{productId}',[BasketController::class, 'basketRemoveAll'])->name('basketremoveall');
+Route::post('/basket/remove/{productId}',[BasketController::class, 'basketRemove'])->name('basketremove');
 Route::post('/chekout', [OrderController::class, 'chekoutConfirm'])->name('chekoutConfirm');
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/logout',[LoginController::class, 'logout'])->name('logout');
@@ -52,10 +54,11 @@ Route::group(['middleware' => ['auth']], function () {
 
 
 Route::group([
-    'middleware' => ['admin'],
-    'prefix' => 'admin',
-    ], function () {
-
+        'middleware' => ['admin'],
+        'prefix' => 'admin',
+    ], 
+    function () {
+        
             Route::get('/', [App\Http\Controllers\Admin\GeneralController::class, 'index'])->name('adminIndex'); 
             Route::resource('categories',App\Http\Controllers\Admin\CategoryController::class);
             Route::resource('products',App\Http\Controllers\Admin\ProductController::class);

@@ -10,8 +10,8 @@ use App\Models\Brand;
 
 class CategoryController extends Controller
 {
-    public function index(Request $request,$cod){
-        $category = Category::where('code',$cod)->first();
+    public function index(Request $request, $categoryCode){
+        $category = Category::where('code',$categoryCode)->first();
         $productsQuery = Product::query();
         $productsQuery->where('category_id', '=', $category->id);
         if($request->filled('brand')){
@@ -36,11 +36,12 @@ class CategoryController extends Controller
         $start = $products->currentPage();
         $end = $products->lastPage();
         $products->withQueryString();
-        return view('category.index', [ 'category'=> $category,
+        return view('category.index', [ 'category' => $category,
                                         'products' => $products,
                                         'brands' => $this->brandsFilter($category->id),
                                         'diagonals' => $this->diagonalFilter($category->id),
-                                        'rams' => $this->ramFilter($category->id)]);
+                                        'rams' => $this->ramFilter($category->id)
+                                        ]);
     }
 
     protected function brandsFilter($id){

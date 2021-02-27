@@ -9,7 +9,7 @@ use App\Models\ProductImages;
 
 class ProductController extends Controller
 { 
-    public function index(Request $request,$category,$productName = null)
+    public function index(Request $request, $categoryCode,$productName = null)
     {   
         $product = Product::where('code',$productName)->first();
         //$images = ProductImages::where('id', $product->id)->first();

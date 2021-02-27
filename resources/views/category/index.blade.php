@@ -26,7 +26,7 @@
 <div class="uk-grid-medium  uk-section-muted uk-child-width-1-1 uk-grid uk-grid-stack" uk-grid="">
         <section class="uk-text-center uk-section-muted uk-margin-small-top  uk-first-column">
             <h1
-            class="uk-margin-small-top uk-margin-remove-bottom">{{ $category->name}}</h1>
+            class="uk-margin-small-top uk-margin-remove-bottom">{{$category->name}}</h1>
         </section>
 <div class="uk-section uk-section-muted uk-section-small" id="First">
     <div class="uk-section uk-grid-row-medium uk-margin-medium-right uk-margin-medium-left uk-grid" uk-grid>
